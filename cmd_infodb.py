@@ -1,8 +1,3 @@
-'''
-next day working points
--fix remove info error
--show message in show list when no entry found
-'''
 user_input = None
 info_db = []
 user_commands = [
@@ -33,6 +28,9 @@ def show_available_commands():
 
 #show info from db
 def show_info_db():
+    if not len(info_db):
+        print('No info found')
+        return
     id = 1
     for name, email, phone in info_db:
         print('-'* 20)
